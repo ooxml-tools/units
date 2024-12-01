@@ -1,0 +1,11 @@
+{
+    "name": "@ooxml-tools/units",
+    "version": "0.0.0",
+    "scripts": {
+        "test": "vitest"
+    },
+    "devDependencies": {
+        "@tsconfig/node22": "^22.0.0",
+        "vitest": "^2.1.6"
+    }
+}
