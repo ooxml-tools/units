@@ -1,4 +1,4 @@
-import { cmToDxa, cmToEmu, cmToInch, cmToTwip, degreeToOoxmlDegree, dxaToCm, emuToCm, inchToCm, ooxmlDegreeToDegree, twipToCm } from "./";
+import { cmToDxa, cmToEmu, cmToInch, cmToTwip, degreeToOoDegree, dxaToCm, emuToCm, inchToCm, ooDegreeToDegree, twipToCm } from "./";
 import {describe, expect, it} from "vitest";
 
 const DATA = {
@@ -9,7 +9,7 @@ const DATA = {
         [1.4, 794],
         [-1.4, -794],
     ],
-    ooxmlDegree: [
+    ooDegree: [
         [1, 60000],
         [0, 0],
         [-1, -60000],
@@ -98,17 +98,17 @@ describe("emuToCm(number): number", () => {
 });
 
 describe("degreeToOoxmlDegree(number): number", () => {
-    for (const [initial, expected] of DATA.ooxmlDegree) {
+    for (const [initial, expected] of DATA.ooDegree) {
         it(`degreeToOoxmlDegree(${initial}) ≈ ${expected}`, () => {
-            expect(degreeToOoxmlDegree(initial)).toBeCloseTo(expected);
+            expect(degreeToOoDegree(initial)).toBeCloseTo(expected);
         })
     }
 });
 
 describe("ooxmlDegreeToDegree(number): number", () => {
-    for (const [initial, expected] of DATA.ooxmlDegree) {
+    for (const [initial, expected] of DATA.ooDegree) {
         it(`ooxmlDegreeToDegree(${expected}) ≈ ${initial}`, () => {
-            expect(ooxmlDegreeToDegree(expected)).toBeCloseTo(initial);
+            expect(ooDegreeToDegree(expected)).toBeCloseTo(initial);
         });
     }
 });

@@ -40,20 +40,20 @@ export function inchToCm(input: number) {
 
 // =============
 
-export function toOoDegree(degrees: number) {
-    return degrees / 60000;
-}
-
-export function fromOoDegree(degrees: number) {
-    return Math.round(degrees * 60000);
-}
-
-// =============
-
 export function pointToDxa(input: number) {
     return input * 20;
 }
 
 export function dxaToPoint(input: number) {
     return input / 20;
+}
+
+// =============
+
+export function degreeToOoDegree (degrees: number) {
+    return Math.round(degrees * 60000);
+}
+
+export function ooDegreeToDegree (degrees: number) {
+    return degrees / 60000;
 }
