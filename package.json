@@ -1,11 +1,50 @@
 {
     "name": "@ooxml-tools/units",
     "version": "0.0.0",
-    "scripts": {
-        "test": "vitest"
+    "license": "MIT",
+    "main": "./dist/npm/index.js",
+    "types": "./dist/npm/types.d.ts",
+    "type": "module",
+    "bin": {
+        "ooxml-units": "./dist/npm/bin/ooxml-units.js"
     },
+    "scripts": {
+        "lint": "npx prettier . --check",
+        "test": "vitest",
+        "lint:format": "npx prettier . --write",
+        "build": "rollup -c rollup.config.ts --configPlugin typescript"
+    },
+    "exports": {
+        ".": "./dist/npm/index.js",
+        "./commands": "./dist/npm/commands.js"
+    },
+    "files": [
+        "./dist/npm",
+        "./package.json",
+        "./README.md"
+    ],
     "devDependencies": {
+        "@rollup/plugin-typescript": "^11.1.6",
+        "@rollup/plugin-virtual": "^3.0.2",
         "@tsconfig/node22": "^22.0.0",
+        "@types/yargs": "^17.0.32",
+        "prettier": "3.3.3",
+        "rollup": "^4.18.1",
+        "rollup-plugin-copy": "^3.5.0",
+        "rollup-plugin-dts": "^6.1.1",
+        "rollup-plugin-typescript-paths": "^1.5.0",
+        "ts-node": "^10.9.2",
+        "tslib": "^2.6.3",
+        "tsx": "^4.17.0",
         "vitest": "^2.1.6"
+    },
+    "engines": {
+        "node": ">=20.x"
+    },
+    "dependencies": {
+        "glob": "^11.0.0",
+        "jszip": "^3.10.1",
+        "typescript": "^5.5.4",
+        "yargs": "^17.7.2"
     }
 }
