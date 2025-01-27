@@ -1,6 +1,6 @@
 {
   "name": "@ooxml-tools/units",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "license": "MIT",
   "main": "./dist/npm/index.js",
   "types": "./dist/npm/types.d.ts",
