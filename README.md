@@ -33,7 +33,6 @@ Throughout ECMA-376, the EMU is used as a unit of measurement for length. An EMU
 
 [Rationale: The EMU was created in order to be able to evenly divide in both English and Metric units, in order to avoid rounding errors during the calculation. The usage of EMUs also facilitates a more seamless system switch and interoperability between different locales utilizing different units of measurement. EMUs define an integer based, high precision coordinate system. end rationale]
 
-
 ## API
 
 - `cmToTwip(number)`/`twipToCm(number)`
