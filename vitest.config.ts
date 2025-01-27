@@ -3,4 +3,4 @@ export default {
     // ... Specify options here.
     exclude: [],
   },
-}
+};

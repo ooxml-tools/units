@@ -9,9 +9,7 @@ yargs(process.argv.slice(2))
   .usage(`${scriptName} <command> [args]`)
   // HACK to remove script-name from commands
   .scriptName("")
-  .example([
-    [`${scriptName} convert <from> <to> <value>`],
-  ])
+  .example([[`${scriptName} convert <from> <to> <value>`]])
   .command(
     commands.convert.cmd,
     commands.convert.desc,
