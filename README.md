@@ -33,23 +33,6 @@ Throughout ECMA-376, the EMU is used as a unit of measurement for length. An EMU
 
 [Rationale: The EMU was created in order to be able to evenly divide in both English and Metric units, in order to avoid rounding errors during the calculation. The usage of EMUs also facilitates a more seamless system switch and interoperability between different locales utilizing different units of measurement. EMUs define an integer based, high precision coordinate system. end rationale]
 
-### ST_FixedAngle (Fixed Angle)
-
-From Ecma Office Open XML Part 1 - Fundamentals And Markup Language Reference.pdf (page 2925)
-
-This simple type represents a fixed range angle in 60000ths of a degree. Range from (-90, 90 degrees).
-
-### ST_FOVAngle (Field of View Angle)
-
-From Ecma Office Open XML Part 1 - Fundamentals And Markup Language Reference.pdf (page 2926)
-
-Represents a positive angle in 60000ths of a degree. Range from [0, 180] degrees.
-
-### ST_PositiveFixedAngle (Positive Fixed Angle)
-
-From Ecma Office Open XML Part 1 - Fundamentals And Markup Language Reference.pdf (page 2946)
-
-This simple type represents a positive angle in 60000ths of a degree. Range from [0, 360 degrees).
 
 ## API
 
