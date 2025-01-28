@@ -41,3 +41,25 @@ Throughout ECMA-376, the EMU is used as a unit of measurement for length. An EMU
 - `cmToInch(number)`/`inchToCm(number)`
 - `pointToDxa(number)`/`dxaToPoint(number)`
 - `toOoDegree(number)`/`fromOoDegree(number)`
+
+## CLI
+
+```bash
+npx @ooxml-tools/units --help
+# ooxml-units <command> [args]
+#
+# Commands:
+#   convert <from> <to> <value>  convert between units
+#   list                         list valid formats
+#
+# Options:
+#   --version  Show version number                                       [boolean]
+#   --help     Show help                                                 [boolean]
+#
+# Examples:
+#   ooxml-units convert <from> <to> <value>
+```
+
+## License
+
+MIT
