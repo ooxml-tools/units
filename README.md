@@ -1,4 +1,10 @@
-# <img alt="@ooxml-tools/units" height="56" src="https://github.com/user-attachments/assets/af25018f-79a1-46f4-8ea6-6c572278d4ae" />
+<h1>
+    <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://ooxml-tools.github.io/design/images/units-dark.png">
+        <source media="(prefers-color-scheme: light)" srcset="https://ooxml-tools.github.io/design/images/units-light.png">
+        <img alt="@ooxml-tools/units" height="56" src="https://ooxml-tools.github.io/design/images/units-light.png">
+    </picture>
+</h1>
 
 Conversion for the strange and wonderful OOXML units
 
