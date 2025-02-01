@@ -6,7 +6,7 @@
     </picture>
 </h1>
 
-Conversion for the strange and wonderful OOXML units
+Conversion for the strange and wonderful Office Open XML units
 
 Supports conversion from `cm` to
 
