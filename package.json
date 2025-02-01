@@ -1,7 +1,7 @@
 {
   "name": "@ooxml-tools/units",
   "description": "Conversion for the strange and wonderful Office Open XML units",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "license": "MIT",
   "main": "./dist/npm/index.js",
   "types": "./dist/npm/types.d.ts",
