@@ -3,7 +3,7 @@
   "description": "Conversion for the strange and wonderful Office Open XML units",
   "version": "0.1.6",
   "license": "MIT",
-  "main": "./dist/npm/cjs/index.js",
+  "main": "./dist/npm/index.js",
   "types": "./dist/npm/types.d.ts",
   "type": "module",
   "bin": {
