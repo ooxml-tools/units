@@ -6,6 +6,7 @@ import dts from "rollup-plugin-dts";
 import { join } from "path";
 
 const outputDir = join(import.meta.dirname, "/dist/npm/");
+const cjsOutputDir = join(import.meta.dirname, "/dist/npm/cjs/");
 
 export default [
   {
@@ -23,6 +24,21 @@ export default [
       shebang({
         shebang: "#!/usr/bin/env node",
       }),
+      json(),
+      typescript({ tsconfig: "./tsconfig.json" }),
+    ],
+  },
+  {
+    input: {
+      index: "src/index.ts",
+      commands: "src/commands/index.ts",
+    },
+    output: {
+      dir: cjsOutputDir,
+      format: "cjs",
+    },
+    external: ["yargs/yargs", "yargs/helpers", "fs/promises"],
+    plugins: [
       json(),
       typescript({ tsconfig: "./tsconfig.json" }),
     ],
