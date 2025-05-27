@@ -1,4 +1,5 @@
 import {
+  cartesianToExcelCoords,
   cmToDxa,
   cmToEmu,
   cmToInch,
@@ -6,6 +7,7 @@ import {
   degreeToOoDegree,
   dxaToCm,
   emuToCm,
+  excelToCartesianCoords,
   inchToCm,
   ooDegreeToDegree,
   twipToCm,
@@ -41,6 +43,11 @@ const DATA = {
     [1.4, 0.5511],
     [-1.4, -0.5511],
   ],
+  excel: [
+    [[1, 1], "A1"],
+    [[27, 1], "AA1"],
+    [[18278, 100001], "ZZZ100001"],
+  ] as [[number, number], string][]
 } as const;
 
 describe("cmToTwip(number): number", () => {
@@ -121,4 +128,26 @@ describe("ooxmlDegreeToDegree(number): number", () => {
       expect(ooDegreeToDegree(expected)).toBeCloseTo(initial);
     });
   }
+});
+
+describe("cartesianToExcelCoords(row, col): number", () => {
+  for (const [initial, expected] of DATA.excel) {
+    it(`cartesianToExcelCoords(${JSON.stringify(initial)}) ≈ ${JSON.stringify(expected)}`, () => {
+      expect(cartesianToExcelCoords(initial)).toEqual(expected);
+    });
+  }
+});
+
+describe("excelToCartesianCoords(excelCoord): number", () => {
+  for (const [initial, expected] of DATA.excel) {
+    it(`cartesianToExcelCoords(${JSON.stringify(expected)}) ≈ ${JSON.stringify(initial)}`, () => {
+      expect(excelToCartesianCoords(expected)).toEqual(initial);
+    });
+  }
+});
+
+describe("excelToCartesianCoords(excelCoord) throws when invalid", () => {
+  it(`cartesianToExcelCoords("a1")`, () => {
+    expect(() => excelToCartesianCoords("a1")).toThrow(`Invalid coord: "a1"`);
+  });
 });
