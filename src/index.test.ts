@@ -140,14 +140,14 @@ describe("cartesianToExcelCoords(row, col): number", () => {
 
 describe("excelToCartesianCoords(excelCoord): number", () => {
   for (const [initial, expected] of DATA.excel) {
-    it(`cartesianToExcelCoords(${JSON.stringify(expected)}) ≈ ${JSON.stringify(initial)}`, () => {
+    it(`excelToCartesianCoords(${JSON.stringify(expected)}) ≈ ${JSON.stringify(initial)}`, () => {
       expect(excelToCartesianCoords(expected)).toEqual(initial);
     });
   }
 });
 
 describe("excelToCartesianCoords(excelCoord) throws when invalid", () => {
-  it(`cartesianToExcelCoords("a1")`, () => {
+  it(`excelToCartesianCoords("a1")`, () => {
     expect(() => excelToCartesianCoords("a1")).toThrow(`Invalid coord: "a1"`);
   });
 });
