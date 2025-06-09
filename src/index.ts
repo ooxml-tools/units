@@ -96,3 +96,13 @@ export function excelToCartesianCoords(excelCoords: string) {
 
   return [col, row];
 }
+
+// See <https://learn.microsoft.com/en-us/dotnet/api/documentformat.openxml.spreadsheet.column?view=openxml-3.0.1>
+export function pxToColumnWidth (px: number, maximumDigitWidth: number) {
+  return ((px)/maximumDigitWidth * 100+0.5)/100;
+}
+
+// See <https://learn.microsoft.com/en-us/dotnet/api/documentformat.openxml.spreadsheet.column?view=openxml-3.0.1>
+export function columnWidthToPx (columnWidth: number, maximumDigitWidth: number) {
+  return (((columnWidth * 100) - 0.5)/100) * maximumDigitWidth;
+}

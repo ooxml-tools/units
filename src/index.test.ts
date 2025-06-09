@@ -4,12 +4,14 @@ import {
   cmToEmu,
   cmToInch,
   cmToTwip,
+  columnWidthToPx,
   degreeToOoDegree,
   dxaToCm,
   emuToCm,
   excelToCartesianCoords,
   inchToCm,
   ooDegreeToDegree,
+  pxToColumnWidth,
   twipToCm,
 } from "./";
 import { describe, expect, it } from "vitest";
@@ -47,7 +49,11 @@ const DATA = {
     [[1, 1], "A1"],
     [[27, 1], "AA1"],
     [[18278, 100001], "ZZZ100001"],
-  ] as [[number, number], string][]
+  ] as [[number, number], string][],
+  columnWidth: [
+    [[185, 7], 26.433571428571426],
+    [[100, 7], 14.290714285714287],
+  ]
 } as const;
 
 describe("cmToTwip(number): number", () => {
@@ -150,4 +156,21 @@ describe("excelToCartesianCoords(excelCoord) throws when invalid", () => {
   it(`excelToCartesianCoords("a1")`, () => {
     expect(() => excelToCartesianCoords("a1")).toThrow(`Invalid coord: "a1"`);
   });
+});
+
+
+describe("pxToColumnWidth(px, maximumDigitWidth): number", () => {
+  for (const [[initial, maximumDigitWidth], expected] of DATA.columnWidth) {
+    it(`pxToColumnWidth(${initial}, ${maximumDigitWidth}) ≈ ${expected}`, () => {
+      expect(pxToColumnWidth(initial, maximumDigitWidth)).toBeCloseTo(expected);
+    });
+  }
+});
+
+describe("columnWidthToPx(colWidth, maximumDigitWidth): number", () => {
+  for (const [[initial, maximumDigitWidth], expected] of DATA.columnWidth) {
+    it(`columnWidthToPx(${expected}, ${maximumDigitWidth}) ≈ ${initial}`, () => {
+      expect(columnWidthToPx(expected, maximumDigitWidth)).toBeCloseTo(initial);
+    });
+  }
 });
