@@ -68,6 +68,11 @@ npx @ooxml-tools/units --help
 #   ooxml-units convert <from> <to> <value>
 ```
 
+## CI
+
+[![codecov](https://codecov.io/gh/ooxml-tools/units/graph/badge.svg?token=GYOUNVV2JW)](https://codecov.io/gh/ooxml-tools/units)
+
+
 ## License
 
 MIT
