@@ -28,7 +28,7 @@ export default [
       typescript({ tsconfig: "./tsconfig.json" }),
       codecovRollupPlugin({
         enableBundleAnalysis: process.env.CODECOV_TOKEN !== undefined,
-        bundleName: "<bundle project name>",
+        bundleName: "package",
         uploadToken: process.env.CODECOV_TOKEN,
       }),
     ],
