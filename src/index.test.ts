@@ -7,10 +7,12 @@ import {
   columnWidthToPx,
   degreeToOoDegree,
   dxaToCm,
+  dxaToPoint,
   emuToCm,
   excelToCartesianCoords,
   inchToCm,
   ooDegreeToDegree,
+  pointToDxa,
   pxToColumnWidth,
   twipToCm,
 } from "./";
@@ -53,6 +55,10 @@ const DATA = {
   columnWidth: [
     [[185, 7], 26.433571428571426],
     [[100, 7], 14.290714285714287],
+  ],
+  pointToDxa: [
+    [1, 20],
+    [10, 200],
   ]
 } as const;
 
@@ -100,6 +106,22 @@ describe("inchToCm(number): number", () => {
   for (const [initial, expected] of DATA.inch) {
     it(`inchToCm(${expected}) ≈ ${initial}`, () => {
       expect(inchToCm(expected)).toBeCloseTo(initial);
+    });
+  }
+});
+
+describe("pointToDxa(number): number", () => {
+  for (const [initial, expected] of DATA.pointToDxa) {
+    it(`pointToDxa(${initial}) ≈ ${expected}`, () => {
+      expect(pointToDxa(initial)).toBeCloseTo(expected);
+    });
+  }
+});
+
+describe("dxaToPoint(number): number", () => {
+  for (const [initial, expected] of DATA.pointToDxa) {
+    it(`dxaToPoint(${expected}) ≈ ${initial}`, () => {
+      expect(dxaToPoint(expected)).toBeCloseTo(initial);
     });
   }
 });
