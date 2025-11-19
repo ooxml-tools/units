@@ -2,6 +2,6 @@ export default {
   test: {
     // ... Specify options here.
     exclude: [],
-    include: "./src/*.test.ts",
+    include: ["./src/**/*.test.ts"]
   },
 };
