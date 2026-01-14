@@ -3,8 +3,6 @@
   "description": "Conversion for the strange and wonderful Office Open XML units",
   "version": "0.3.0",
   "license": "MIT",
-  "main": "./dist/npm/index.js",
-  "types": "./dist/npm/types.d.ts",
   "type": "module",
   "bin": {
     "ooxml-units": "./dist/npm/bin/ooxml-units.js"
@@ -17,8 +15,14 @@
     "build": "rollup -c rollup.config.ts --configPlugin typescript"
   },
   "exports": {
-    ".": "./dist/npm/index.js",
-    "./commands": "./dist/npm/commands.js"
+    ".": {
+      "import": "./dist/npm/index.js",
+      "types": "./dist/npm/types.d.ts"
+    },
+    "./commands": {
+      "import": "./dist/npm/commands.js",
+      "types": "./dist/npm/commands.d.ts"
+    }
   },
   "files": [
     "./dist/npm",
