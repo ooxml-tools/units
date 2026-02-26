@@ -17,14 +17,15 @@
     "lint:format": "npx prettier . --write",
     "build": "rollup -c rollup.config.ts --configPlugin typescript"
   },
-  "main": "./dist/npm/index.js",
   "exports": {
     ".": {
       "import": "./dist/npm/index.js",
+      "require": "./dist/npm/index.js",
       "types": "./dist/npm/types.d.ts"
     },
     "./commands": {
       "import": "./dist/npm/commands.js",
+      "require": "./dist/npm/commands.js",
       "types": "./dist/npm/commands.d.ts"
     }
   },
