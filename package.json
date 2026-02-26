@@ -7,6 +7,9 @@
   "bin": {
     "ooxml-units": "./dist/npm/bin/ooxml-units.js"
   },
+  "repository": {
+    "url": "https://github.com/ooxml-tools/units"
+  },
   "scripts": {
     "lint": "npx prettier . --check",
     "test": "vitest run --coverage",
