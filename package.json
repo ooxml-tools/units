@@ -8,6 +8,7 @@
     "ooxml-units": "./dist/npm/bin/ooxml-units.js"
   },
   "repository": {
+    "type": "git",
     "url": "https://github.com/ooxml-tools/units"
   },
   "scripts": {
