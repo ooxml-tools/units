@@ -10,9 +10,11 @@ import {
   dxaToPoint,
   emuToCm,
   excelToCartesianCoords,
+  halfPtToPt,
   inchToCm,
   ooDegreeToDegree,
   pointToDxa,
+  ptToHalfPt,
   pxToColumnWidth,
   twipToCm,
 } from "./";
@@ -59,6 +61,11 @@ const DATA = {
   pointToDxa: [
     [1, 20],
     [10, 200],
+  ],
+  ptToHalfPt: [
+    [10, 20],
+    [12, 24],
+    [14, 28],
   ]
 } as const;
 
@@ -193,6 +200,22 @@ describe("columnWidthToPx(colWidth, maximumDigitWidth): number", () => {
   for (const [[initial, maximumDigitWidth], expected] of DATA.columnWidth) {
     it(`columnWidthToPx(${expected}, ${maximumDigitWidth}) ≈ ${initial}`, () => {
       expect(columnWidthToPx(expected, maximumDigitWidth)).toBeCloseTo(initial);
+    });
+  }
+});
+
+describe("ptToHalfPt(pt): number", () => {
+  for (const [initial, expected] of DATA.ptToHalfPt) {
+    it(`ptToHalfPt(${initial}) ≈ ${expected}`, () => {
+      expect(ptToHalfPt(initial)).toBeCloseTo(expected);
+    });
+  }
+});
+
+describe("halfPtToPt(pt): number", () => {
+  for (const [initial, expected] of DATA.ptToHalfPt) {
+    it(`halfPtToPt(${expected}) ≈ ${initial}`, () => {
+      expect(halfPtToPt(expected)).toBeCloseTo(initial);
     });
   }
 });

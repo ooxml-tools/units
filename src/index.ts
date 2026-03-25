@@ -106,3 +106,11 @@ export function pxToColumnWidth (px: number, maximumDigitWidth: number) {
 export function columnWidthToPx (columnWidth: number, maximumDigitWidth: number) {
   return (((columnWidth * 100) - 0.5)/100) * maximumDigitWidth;
 }
+
+export function ptToHalfPt(value: number) {
+  return value * 2
+}
+
+export function halfPtToPt(value: number) {
+  return value / 2
+}

@@ -49,6 +49,7 @@ Throughout ECMA-376, the EMU is used as a unit of measurement for length. An EMU
 - `toOoDegree(number)`/`fromOoDegree(number)`
 - `cartesianToExcelCoords(number,number)`/`excelToCartesianCoords(string)`
 - `pxToColumnWidth(number, maximumDigitWidth)`/`columnWidthToPx(number, maximumDigitWidth)`
+- `ptToHalfPt(number)`/`halfPtToPt(number)`
 
 ## CLI
 
