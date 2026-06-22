@@ -114,3 +114,19 @@ export function ptToHalfPt(value: number) {
 export function halfPtToPt(value: number) {
   return value / 2
 }
+
+export function cmToPt(value: number) {
+  return value * 72 / 2.54
+}
+
+export function ptToCm(value: number) {
+  return value / (72 / 2.54);
+}
+
+export function ptToTwip (value: number) {
+  return cmToTwip(ptToCm(value));
+}
+
+export function twipToPt (value: number) {
+  return cmToPt(twipToCm(value));
+}

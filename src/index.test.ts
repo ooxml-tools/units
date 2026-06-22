@@ -15,8 +15,12 @@ import {
   ooDegreeToDegree,
   pointToDxa,
   ptToHalfPt,
+  ptToCm,
+  cmToPt,
   pxToColumnWidth,
   twipToCm,
+  ptToTwip,
+  twipToPt,
 } from "./";
 import { describe, expect, it } from "vitest";
 
@@ -61,6 +65,14 @@ const DATA = {
   pointToDxa: [
     [1, 20],
     [10, 200],
+  ],
+  ptToCm: [
+    [24, 0.846667],
+    [12, 0.423333],
+  ],
+  ptToTwip: [
+    [24, 480],
+    [12, 240],
   ],
   ptToHalfPt: [
     [10, 20],
@@ -216,6 +228,38 @@ describe("halfPtToPt(pt): number", () => {
   for (const [initial, expected] of DATA.ptToHalfPt) {
     it(`halfPtToPt(${expected}) ≈ ${initial}`, () => {
       expect(halfPtToPt(expected)).toBeCloseTo(initial);
+    });
+  }
+});
+
+describe("ptToCm(number): number", () => {
+  for (const [initial, expected] of DATA.ptToCm) {
+    it(`ptToCm(${initial}) ≈ ${expected}`, () => {
+      expect(ptToCm(initial)).toBeCloseTo(expected);
+    });
+  }
+});
+
+describe("cmToPt(number): number", () => {
+  for (const [expected, initial] of DATA.ptToCm) {
+    it(`cmToPt(${initial}) ≈ ${expected}`, () => {
+      expect(cmToPt(initial)).toBeCloseTo(expected);
+    });
+  }
+});
+
+describe("ptToTwip(number): number", () => {
+  for (const [initial, expected] of DATA.ptToTwip) {
+    it(`ptToTwip(${initial}) ≈ ${expected}`, () => {
+      expect(ptToTwip(initial)).toBeCloseTo(expected);
+    });
+  }
+});
+
+describe("twipToPt(number): number", () => {
+  for (const [expected, initial] of DATA.ptToTwip) {
+    it(`twipToPt(${initial}) ≈ ${expected}`, () => {
+      expect(twipToPt(initial)).toBeCloseTo(expected);
     });
   }
 });
