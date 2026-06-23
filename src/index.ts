@@ -124,9 +124,9 @@ export function ptToCm(value: number) {
 }
 
 export function ptToTwip (value: number) {
-  return cmToTwip(ptToCm(value));
+  return value * 20;
 }
 
 export function twipToPt (value: number) {
-  return cmToPt(twipToCm(value));
+  return value / 20;
 }
